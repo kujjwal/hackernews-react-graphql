@@ -5,6 +5,7 @@ import { NewsItemModel } from '../data/models';
 import { LoadingSpinner } from './loading-spinner';
 import { NewsDetail, newsDetailNewsItemFragment } from './news-detail';
 import { NewsTitle, newsTitleFragment } from './news-title';
+const alanBtn = require('@alan-ai/alan-sdk-web');
 
 export interface INewsFeedProps {
   currentUrl: string;
@@ -43,7 +44,16 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
   } = props;
 
   const nextPage = Math.ceil((skip || 1) / first) + 1;
-
+  let alanButton = alanBtn({
+      key: "868af7a47f1ae52c7628bc60849ece862e956eca572e1d8b807a3e2338fdd0dc/stage",
+      rootEl: document.getElementById("alan-btn"),
+  });
+  console.log(newsItems);
+  for (var i = 0; i < newsItems.length; i++) {
+      if (newsItems[i] != null) {
+          console.log(newsItems[i].title);
+      }
+  }
   return (
     <tr>
       <td style={{ padding: '0px' }}>
@@ -96,6 +106,7 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
           </tbody>
         </table>
       </td>
+      <div id="alan-btn" />
     </tr>
   );
 }

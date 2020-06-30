@@ -5,7 +5,6 @@ import { useQuery } from '@apollo/react-hooks';
 import { Footer } from '../components/footer';
 import { Header } from '../components/header';
 import { IMeQuery, ME_QUERY } from '../data/queries/me-query';
-
 interface IMainLayoutProps {
   children: React.ReactChild;
   currentUrl: string;
@@ -25,7 +24,6 @@ export function MainLayout(props: IMainLayoutProps): JSX.Element {
     isFooterVisible = true,
     title = 'Hacker News',
   } = props;
-
   return (
     <div>
       <Head>
