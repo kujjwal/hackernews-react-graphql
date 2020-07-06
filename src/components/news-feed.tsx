@@ -46,13 +46,14 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
       key: "868af7a47f1ae52c7628bc60849ece862e956eca572e1d8b807a3e2338fdd0dc/stage",
       rootEl: document.getElementById("alan-btn"),
     });
-  },[]);
-  console.log(newsItems);
-  for (var i = 0; i < newsItems.length; i++) {
-    if (newsItems[i] != null) {
-      console.log(newsItems[i].title);
+    var headlineList = [];
+    for (var i = 0; i < newsItems.length; i++) {
+        if (newsItems[i] != null) {
+            headlineList.push(newsItems[i].title);
+        }
     }
-  }
+    alanButton.setVisualState({headlines: headlineList});
+  },[]);
   return (
     <tr>
         <td style={{ padding: '0px' }}>
