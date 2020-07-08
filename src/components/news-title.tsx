@@ -26,12 +26,10 @@ export const newsTitleFragment = `
 
 export function NewsTitle(props: INewsTitleProps): JSX.Element {
   const { id, isRankVisible = true, isUpvoteVisible = true, rank, title, upvoted, url } = props;
-
   const [upvoteNewsItem] = useMutation(UPVOTE_NEWS_ITEM_MUTATION, {
     onError: () => Router.push('/login', `/vote?id=${id}&how=up&goto=news`),
     variables: { id },
   });
-
   return (
     <tr className="athing">
       <td style={{ textAlign: 'right', verticalAlign: 'top' }} className="title">

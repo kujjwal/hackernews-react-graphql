@@ -4,7 +4,9 @@ import { NewsItemModel } from '../data/models';
 import { LoadingSpinner } from './loading-spinner';
 import { NewsDetail, newsDetailNewsItemFragment } from './news-detail';
 import { NewsTitle, newsTitleFragment } from './news-title';
-import { useEffect } from 'react';
+import Box from '@material-ui/core/Box';
+import {APP_URI} from "../config";
+
 export interface INewsFeedProps {
   currentUrl: string;
   first: number;
@@ -39,12 +41,35 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
     currentUrl,
   } = props;
   const nextPage = Math.ceil((skip || 1) / first) + 1;
-  useEffect(() => {
-    console.log('useEffect');
+  var bold = new Array(newsItems.length).fill(false);
+  const [title, setTitle] = React.useState(
+      'Placeholder'
+  );
+
+  React.useEffect(() => {
     const alanBtn = require('@alan-ai/alan-sdk-web');
     let alanButton = alanBtn({
       key: "868af7a47f1ae52c7628bc60849ece862e956eca572e1d8b807a3e2338fdd0dc/stage",
       rootEl: document.getElementById("alan-btn"),
+      onCommand: function (commandData) {
+          if (commandData.command === "highlightTitle") {
+            setTitle(commandData.title);
+          }
+          if (commandData.command === "homePage") {
+            window.open(`${APP_URI}/news`, 'Hacker News Clone');
+          }
+          if (commandData.command === "newPage") {
+            window.open(`${APP_URI}/newest`, 'Hacker News Clone');
+          }
+          if (commandData.command === "showPage") {
+            window.open(`${APP_URI}/show`, '_blank');
+          }
+          if (commandData.command === "openLink") {
+            const num = commandData.value;
+            const url = newsItems[num - 1].url;
+            window.open(url, '_blank');
+          }
+      },
     });
     var headlineList = [];
     for (var i = 0; i < newsItems.length; i++) {
@@ -71,23 +96,40 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
             <>
               {newsItems
                   .filter((newsItem): newsItem is NewsItemModel => !!newsItem && !newsItem.hidden)
-                  .flatMap((newsItem, index) => [
-                    <NewsTitle
-                        key={`${newsItem.id}title`}
-                        isRankVisible={isRankVisible}
-                        isUpvoteVisible={isUpvoteVisible}
-                        rank={skip + index + 1}
-                        {...newsItem}
-                    />,
-                    <NewsDetail
-                        key={`${newsItem.id}detail`}
-                        isFavoriteVisible={false}
-                        isPostScrutinyVisible={isPostScrutinyVisible}
-                        isJobListing={isJobListing}
-                        {...newsItem}
-                    />,
-                    <tr className="spacer" key={`${newsItem.id}spacer`} style={{ height: 5 }} />,
-                  ])}
+                  .flatMap((newsItem, index) => {
+                    var defaultProps;
+                    if (newsItem.title == title) {
+                      defaultProps = {
+                          borderColor: "yellow",
+                          border: 2,
+                      };
+                    }
+                    else {
+                      defaultProps = {
+                          border: 0,
+                      };
+                    }
+                    return ([
+                        <Box {...defaultProps}>
+                            <NewsTitle
+                                key={`${newsItem.id}title`}
+                                isRankVisible={isRankVisible}
+                                isUpvoteVisible={isUpvoteVisible}
+                                rank={skip + index + 1}
+                                {...newsItem}
+                                bold={bold[index]}
+                            />
+                            <NewsDetail
+                                key={`${newsItem.id}detail`}
+                                isFavoriteVisible={false}
+                                isPostScrutinyVisible={isPostScrutinyVisible}
+                                isJobListing={isJobListing}
+                                {...newsItem}
+                            />
+                        </Box>,
+                        <tr className="spacer" key={`${newsItem.id}spacer`} style={{height: 5}}/>,
+                    ]);
+              })}
               <tr key="morespace" className="morespace" style={{ height: '10px' }} />
               <tr key="morelinktr">
                 <td key="morelinkcolspan" colSpan={2} />
