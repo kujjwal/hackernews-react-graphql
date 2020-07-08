@@ -41,7 +41,6 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
     currentUrl,
   } = props;
   const nextPage = Math.ceil((skip || 1) / first) + 1;
-  var bold = new Array(newsItems.length).fill(false);
   const [title, setTitle] = React.useState(
       'Placeholder'
   );
@@ -65,9 +64,13 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
             window.open(`${APP_URI}/show`, '_blank');
           }
           if (commandData.command === "openLink") {
-            const num = commandData.value;
-            const url = newsItems[num - 1].url;
+            const num = commandData.value - 1;
+            const index = num - (newsItems.length * (nextPage - 1));
+            const url = newsItems[index].url;
             window.open(url, '_blank');
+          }
+          if (commandData.command === "nextPage") {
+            window.open(`${APP_URI}?p=${nextPage}`, '_blank');
           }
       },
     });
@@ -117,7 +120,6 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
                                 isUpvoteVisible={isUpvoteVisible}
                                 rank={skip + index + 1}
                                 {...newsItem}
-                                bold={bold[index]}
                             />
                             <NewsDetail
                                 key={`${newsItem.id}detail`}
