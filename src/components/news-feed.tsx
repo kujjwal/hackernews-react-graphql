@@ -89,6 +89,7 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
             headlineList.push(newsItems[i].title);
         }
     }
+    console.log(headlineList);
     alanButton.setVisualState({headlines: headlineList});
   },[]);
   return (
