@@ -48,7 +48,7 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
   React.useEffect(() => {
     const alanBtn = require('@alan-ai/alan-sdk-web');
     let alanButton = alanBtn({
-      key: "868af7a47f1ae52c7628bc60849ece862e956eca572e1d8b807a3e2338fdd0dc/stage",
+      key: "59d47fd608d51a967628bc60849ece862e956eca572e1d8b807a3e2338fdd0dc/stage",
       rootEl: document.getElementById("alan-btn"),
       onCommand: function (commandData) {
           if (commandData.command === "highlightTitle") {
@@ -65,12 +65,21 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
           }
           if (commandData.command === "openLink") {
             const num = commandData.value - 1;
-            const index = num - (newsItems.length * (nextPage - 1));
+            const index = num - (newsItems.length * (nextPage - 2));
             const url = newsItems[index].url;
             window.open(url, '_blank');
           }
           if (commandData.command === "nextPage") {
             window.open(`${APP_URI}?p=${nextPage}`, '_blank');
+          }
+          if (commandData.command === "commentsPage") {
+              window.open(`${APP_URI}/newcomments`, '_blank');
+          }
+          if (commandData.command === "askPage") {
+              window.open(`${APP_URI}/ask`, '_blank');
+          }
+          if (commandData.command === "jobsPage") {
+              window.open(`${APP_URI}/jobs`, '_blank');
           }
       },
     });
@@ -150,7 +159,6 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
             </tbody>
           </table>
         </td>
-        <div id="alan-btn" />
       </tr>
   );
 }

@@ -17,6 +17,7 @@ export function ActivePage(props): JSX.Element {
         newsItems={sampleData.newsItems}
         skip={pageNumber * 30}
       />
+      <div id="alan-btn" />
     </MainLayout>
   );
 }
