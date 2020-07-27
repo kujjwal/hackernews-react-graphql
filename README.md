@@ -1,11 +1,14 @@
-<h2 align="center">Hacker News Clone React/GraphQL</h2>
+<h1>Hacker News Clone React/GraphQL, With Alan Voice Integration for Tutorial</h2>
 
-<p align="center">
-<a href="https://github.com/clintonwoo/hackernews-react-graphql/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/clintonwoo/hackernews-react-graphql.svg?style=social&label=Star"></a> 
-<a href="https://github.com/clintonwoo/hackernews-react-graphql/"><img alt="GitHub Followers" src="https://img.shields.io/github/followers/clintonwoo.svg?style=social&label=Follow"></a> 
-<a href="https://github.com/clintonwoo/hackernews-react-graphql/issues"><img alt="GitHub Issues" src="https://img.shields.io/github/issues/clintonwoo/hackernews-react-graphql.svg"></a> 
-<a href="https://github.com/clintonwoo/hackernews-react-graphql/pulls"><img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr-raw/clintonwoo/hackernews-react-graphql.svg"></a>
-</p>
+## Voice Experience Integration Tutorial
+
+A MultiModal (Voice/Visual) Experience was built on top of this React Example App using Alan AI's Conversational Platform.
+
+[Tutorial](https://medium.com/@roanak/voice-enabling-your-react-app-complete-guide-of-how-you-can-add-a-voice-assistant-to-your-aba55a7e4991)
+
+[Demo Video](https://www.youtube.com/watch?v=5GgbqafBOSk)
+
+## Original README
 
 This project is a clone of hacker news rewritten with universal JavaScript, using React and GraphQL. It is intended to be an example or boilerplate to help you structure your projects using production-ready technologies.
 
