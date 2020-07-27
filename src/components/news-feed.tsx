@@ -54,13 +54,13 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
           if (commandData.command === "highlightTitle") {
             setTitle(commandData.title);
           }
-          if (commandData.command === "homePage") {
+          if (commandData.command === "home") {
             window.open(`${APP_URI}/news`, 'Hacker News Clone');
           }
-          if (commandData.command === "newPage") {
+          if (commandData.command === "new") {
             window.open(`${APP_URI}/newest`, 'Hacker News Clone');
           }
-          if (commandData.command === "showPage") {
+          if (commandData.command === "show") {
             window.open(`${APP_URI}/show`, '_blank');
           }
           if (commandData.command === "openLink") {
@@ -69,16 +69,16 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
             const url = newsItems[index].url;
             window.open(url, '_blank');
           }
-          if (commandData.command === "nextPage") {
+          if (commandData.command === "next") {
             window.open(`${APP_URI}?p=${nextPage}`, '_blank');
           }
-          if (commandData.command === "commentsPage") {
+          if (commandData.command === "comments") {
               window.open(`${APP_URI}/newcomments`, '_blank');
           }
-          if (commandData.command === "askPage") {
+          if (commandData.command === "ask") {
               window.open(`${APP_URI}/ask`, '_blank');
           }
-          if (commandData.command === "jobsPage") {
+          if (commandData.command === "jobs") {
               window.open(`${APP_URI}/jobs`, '_blank');
           }
       },
