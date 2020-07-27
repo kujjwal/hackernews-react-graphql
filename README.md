@@ -1,4 +1,4 @@
-<h2 align="center">Hacker News Clone React/GraphQL, With Alan Voice Integration for Tutorial</h2>
+<h1>Hacker News Clone React/GraphQL, With Alan Voice Integration for Tutorial</h2>
 
 ## Voice Experience Integration Tutorial
 
