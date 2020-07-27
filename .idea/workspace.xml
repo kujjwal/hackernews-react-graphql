@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d82996b-b574-4a14-88b7-d66eb6230d27" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/news-feed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/news-feed.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -52,7 +54,7 @@
         <counts>
           <entry key="json" value="2" />
           <entry key="ts" value="16" />
-          <entry key="tsx" value="1972" />
+          <entry key="tsx" value="1986" />
           <entry key="txt" value="59" />
         </counts>
       </usages-collector>
@@ -61,7 +63,7 @@
           <entry key="JSON" value="2" />
           <entry key="PLAIN_TEXT" value="59" />
           <entry key="TypeScript" value="16" />
-          <entry key="TypeScript JSX" value="1972" />
+          <entry key="TypeScript JSX" value="1986" />
         </counts>
       </usages-collector>
     </session>
@@ -94,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/news-feed.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="93" column="8" lean-forward="true" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
+            <state relative-caret-position="450">
+              <caret line="188" column="3" lean-forward="true" selection-start-line="188" selection-start-column="3" selection-end-line="188" selection-end-column="3" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -288,7 +290,7 @@
       <workItem from="1594415902649" duration="1167000" />
       <workItem from="1595523547520" duration="4406000" />
       <workItem from="1595607303247" duration="2653000" />
-      <workItem from="1595869547649" duration="548000" />
+      <workItem from="1595869547649" duration="962000" />
     </task>
     <task id="LOCAL-00001" summary="Sending Page data to Alan scripts for voice interfacing">
       <created>1594066667019</created>
@@ -301,7 +303,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30781000" />
+    <option name="totallyTimeSpent" value="31195000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -434,8 +436,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/news-feed.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="93" column="8" lean-forward="true" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
+        <state relative-caret-position="450">
+          <caret line="188" column="3" lean-forward="true" selection-start-line="188" selection-start-column="3" selection-end-line="188" selection-end-column="3" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

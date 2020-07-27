@@ -47,7 +47,7 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
 
   React.useEffect(() => {
     const alanBtn = require('@alan-ai/alan-sdk-web');
-    let alanButton = alanBtn({
+    const alanButton = alanBtn({
       key: "59d47fd608d51a967628bc60849ece862e956eca572e1d8b807a3e2338fdd0dc/stage",
       rootEl: document.getElementById("alan-btn"),
       onCommand: function (commandData) {
@@ -83,8 +83,8 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
           }
       },
     });
-    var headlineList = [];
-    for (var i = 0; i < newsItems.length; i++) {
+    let headlineList = [];
+    for (let i = 0; i < newsItems.length; i++) {
         if (newsItems[i] != null) {
             headlineList.push(newsItems[i].title);
         }
@@ -110,7 +110,7 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
               {newsItems
                   .filter((newsItem): newsItem is NewsItemModel => !!newsItem && !newsItem.hidden)
                   .flatMap((newsItem, index) => {
-                    var defaultProps;
+                    let defaultProps;
                     if (newsItem.title == title) {
                       defaultProps = {
                           borderColor: "yellow",
