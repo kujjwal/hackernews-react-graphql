@@ -83,7 +83,7 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
           }
       },
     });
-    let headlineList = [];
+    const headlineList = [];
     for (let i = 0; i < newsItems.length; i++) {
         if (newsItems[i] != null) {
             headlineList.push(newsItems[i].title);
